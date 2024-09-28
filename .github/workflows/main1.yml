@@ -19,6 +19,14 @@ jobs:
         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: ap-south-1
+        
+    - name: Set up eksctl
+      uses: moia-oss/setup-eksctl@v1
+      with:
+        version: 'latest' # You can specify a version like '0.57.0'
+
+    - name: Verify eksctl installation
+      run: eksctl version    
 
     - name: Create EKS cluster
       run: |
