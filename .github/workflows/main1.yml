@@ -27,7 +27,7 @@ jobs:
 
 
     - name: Create EKS cluster
-      run:  eksctl create cluster --name my-cluster --region ap-south-1 --version 1.29 --vpc-public-subnets subnet-0270268e35a6e310c,subnet-07f47ab266d6e8d52 --without-nodegroup
+      run:  eksctl create cluster --name my-cluster24 --region ap-south-1 --version 1.29 --vpc-public-subnets subnet-0270268e35a6e310c,subnet-07f47ab266d6e8d52 --without-nodegroup
 
 
     - name: Deploy application
