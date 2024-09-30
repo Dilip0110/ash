@@ -20,17 +20,12 @@ jobs:
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: ap-south-1
 
-    - name: Install eksctl
+    
+
+  
+
+
+    - name: Deploy to EKS
       run: |
-        curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
-        sudo mv /tmp/eksctl /usr/local/bin
-
-
-    - name: Create EKS cluster
-      run:  eksctl create cluster --name my-cluster24 --region ap-south-1 --version 1.29 --vpc-public-subnets subnet-0270268e35a6e310c,subnet-07f47ab266d6e8d52 --without-nodegroup
-
-
-    - name: Deploy application
-      run: |
-        kubectl apply -f k8s/deployment.yaml
-        kubectl apply -f k8s/service.yaml
+        kubectl apply -f deployment.yaml
+        kubectl apply -f service.yaml
