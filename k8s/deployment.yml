@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: my-app
-        image: nginx:latest
+        image: 222634385188.dkr.ecr.ap-south-1.amazonaws.com/dilipecr:github.sha
         ports:
         - containerPort: 80
